@@ -50,3 +50,13 @@ do
 	value=${combo[$key]}
 	echo $key "=" ${count[$value]} "%"
 done
+value=$( sorting ${count[@]} )
+echo
+echo "winning combination is/are:"
+for key in ${!combo[@]}
+do
+        if [ ${count[${combo[$key]}]} == $value ]
+        then
+                `echo $key "=" ${count[${combo[$key]}]} "%"
+	fi
+done
