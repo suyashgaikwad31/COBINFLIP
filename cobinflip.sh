@@ -45,3 +45,8 @@ do
 
 done
 
+for key in ${!combo[@]} )
+do
+	value=${combo[$key]}
+	echo $key "=" ${count[$value]} "%"
+done
