@@ -27,3 +27,21 @@ function sorting()
 	done
 	echo ${arr[0]}
 }
+for (( i=0; i<14; i+=1 ))
+do
+	count[$i]=0
+done
+
+for (( i=1; i<=100; i+=1 ))
+do
+	random=$(( RANDOM%2 ))
+	count[ $random]=$(( ${count[$random]}+1 )) #singlet
+
+	random=$(( RANDOM%4+2 ))
+        count[ $random]=$(( ${count[$random]}+1 )) #doublet
+
+	random=$(( RANDOM%8+6 ))
+        count[ $random]=$(( ${count[$random]}+1 )) #triplet
+
+done
+
